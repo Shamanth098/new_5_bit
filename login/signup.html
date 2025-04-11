@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sign Up</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APMEEX | Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -11,86 +12,151 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+    body, html {
+      font-family: 'Outfit', sans-serif;
+      background: #0a0a0a;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: #111;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.2);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .logo {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      margin-bottom: 30px;
     }
 
-    .signup-container {
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    .logo img {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+    }
+
+    .logo h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .input-group {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #aaa;
+    }
+
+    .input-group input {
       width: 100%;
-      max-width: 400px;
-    }
-
-    .signup-container h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #333;
-    }
-
-    .signup-container input[type="text"],
-    .signup-container input[type="email"],
-    .signup-container input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    .signup-container button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 15px;
-      background-color: #2575fc;
-      color: #fff;
+      padding: 10px;
+      border-radius: 6px;
       border: none;
-      border-radius: 10px;
-      font-size: 18px;
+      background: #222;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: #00c6ff;
+      color: black;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s ease;
+      margin-top: 20px;
+      transition: background 0.3s;
     }
 
-    .signup-container button:hover {
-      background-color: #1a5ed0;
+    .login-btn:hover {
+      background: #00aee6;
     }
 
-    .signup-container p {
-      text-align: center;
-      margin-top: 15px;
+    .extra-links {
+      margin-top: 20px;
     }
 
-    .signup-container p a {
-      color: #2575fc;
+    .extra-links a {
+      color: #00c6ff;
       text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
     }
 
-    .signup-container p a:hover {
-      text-decoration: underline;
-    }
+    /* footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.8rem;
+      color: #444;
+    } */
   </style>
 </head>
 <body>
-
-  <div class="signup-container">
-    <h2>Create Account</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="password" placeholder="Password" required>
-      <input type="password" placeholder="Confirm Password" required>
-      <button type="submit">Sign Up</button>
+  <div class="login-container">
+    <div class="logo">
+      <img src="logo_2.jpg" alt="APMEEX Logo">
+      <h2>APMEEX</h2>
+    </div>
+    <h3>Login to Your Account</h3>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <button type="submit" class="login-btn">Login</button>
     </form>
-    <p>Already have an account? <a href="login.html">Log in</a></p>
+    <div class="extra-links">
+      <a href="signup.html">Don't have an account? Sign Up</a>
+      <a href="test.html">Back </a>
+    </div>
   </div>
 
+  <!-- <footer>
+    &copy; 2025 APMEEX. All rights reserved.
+  </footer> -->
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email && password) {
+        alert("Login successful. Redirecting to home page...");
+        window.location.href = "home.html";
+      } else {
+        alert("Please enter valid email and password.");
+      }
+    });
+  </script>
 </body>
 </html>

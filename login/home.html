@@ -3,132 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Page</title>
-  <style>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
-    
-    
-  }
+  <title>APMEEX | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* body{
-    background-image: url('login_img1.avif');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  } */
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #1e1e1e;
-    color: white;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo-img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    object-fit: contain;
-  }
-  
-  .logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .search-bar {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-  }
-  
-  
-  .navbar1 {
-    background: linear-gradient(to right, #1e486d, #00c6ff);
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    
-  }
+    body, html {
+      font-family: 'Outfit', sans-serif;
+      height: 100%;
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      color: #ffffff;
+    }
 
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #000000;
+      border-bottom: 1px solid #222;
+    }
 
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-    transition: opacity 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    opacity: 0.8;
-  }
-  
-  .nav-links a.active {
-    border-bottom: 2px solid white;
-  }
-  
-  .content {
-    padding: 60px 30px;
-    text-align: center;
-  }
-  
-  .content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .content p {
-    font-size: 1.2rem;
-    color: #555;
-  }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 12px;
+    }
+
+    .logo-text h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00c6ff;
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid #00eaff;
+    }
+
+    .content {
+      padding: 80px 30px;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #00f2ff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .search-bar {
+      padding: 8px 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    .search-bar::placeholder {
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="nav">
-
   <header class="navbar">
     <div class="logo-container">
-      <img src="logo_1.jpg" alt="Logo" class="logo-img" />
-      <span class="logo-text"><h3>APMEEX</h3></span>
+      <img src="logo_2.jpg" alt="APMEEX Logo" class="logo-img" />
+      <div class="logo-text"><h1>APMEEX</h1></div>
     </div>
     <input type="search" placeholder="Search..." class="search-bar" />
-  </header>
-  
-  <header class="navbar1">
-    
     <nav class="nav-links">
       <a href="home.html" class="active">Home</a>
       <a href="prediction.html">Prediction</a>
-      <!-- <a href="#">Page 3</a> -->
       <a href="about.html">About</a>
     </nav>
   </header>
-  
-</div>
 
   <main class="content">
-    <!-- <h1>Welcome to the Home Page</h1>
-    <p>This is your main dashboard. You can customize this page to display user-specific content, updates, or features.</p> -->
+    <h2>Welcome to APMEEX</h2>
+    <p>Your one-stop platform for AI-powered predictions, intelligent tools, and next-gen web experiences. Explore our features, build smarter, and stay ahead.</p>
   </main>
 </body>
 </html>
